@@ -1,59 +1,51 @@
-# ML Lab 03: Bayesian Classification & Naive Bayes
+# Naive Bayes: Probabilistic & Bayesian Classification
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg?logo=python&logoColor=white)](https://www.python.org/)
 [![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange.svg?logo=jupyter&logoColor=white)](https://jupyter.org/)
 [![Scikit-Learn](https://img.shields.io/badge/scikit--learn-F7931E.svg?logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
 [![Pandas](https://img.shields.io/badge/pandas-150458.svg?logo=pandas&logoColor=white)](https://pandas.pydata.org/)
 [![NumPy](https://img.shields.io/badge/numpy-013243.svg?logo=numpy&logoColor=white)](https://numpy.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
----
-
-## Academic Details
-- **Student Name:** Shrri Dharshan D R
-- **Register Number:** 23BPS1090
-- **Course Code:** BCSE209P
-- **Course Title:** Machine Learning Laboratory
-- **Faculty:** Dr. S. Shridevi
-- **Institution:** School of Computer Science and Engineering (SCOPE), VIT Chennai
+## Author
+- **Shrri Dharshan D R** — [@shrridharshan27](https://github.com/shrridharshan27)
 
 ---
 
 ## Overview
-This repository contains laboratory implementations and empirical evaluations of **Bayesian Classification** and **Naive Bayes models** applied to real-world scientific datasets from the UCI Machine Learning Repository.
+This repository contains probabilistic classification pipelines implementing **Gaussian Naive Bayes (GNB)** and **Bayesian decision theory** applied to continuous scientific observation datasets from the UCI Machine Learning Repository.
 
-The laboratory explores Bayes' Theorem, conditional class independence assumptions, Gaussian probability density functions for continuous features, prior and posterior calculation, and comparative performance analysis against imbalanced real-world distributions.
+The project examines prior and posterior probability distributions, Gaussian probability density functions for continuous variables, class conditional independence assumptions, and likelihood-ratio classification under real-world class imbalances.
 
 ---
 
-## Experiments & Datasets
+## Datasets & Problem Statements
 
-### 1. MAGIC Gamma Telescope Dataset
-- **Dataset:** MAGIC Gamma Telescope ([UCI ID: 159](https://archive.ics.uci.edu/dataset/159))
-- **Objective:** Discriminate between primary gamma rays (signal: `g`) and hadronic cosmic rays (background: `h`) detected via atmospheric Cherenkov radiation showers.
-- **Features:** 10 continuous morphometric Hillas parameters (`fLength`, `fWidth`, `fSize`, `fConc`, `fAsym`, etc.).
+### 1. MAGIC Gamma Telescope Cherenkov Shower Discrimination
+- **Dataset:** MAGIC Gamma Telescope Dataset ([UCI ID: 159](https://archive.ics.uci.edu/dataset/159))
+- **Objective:** Differentiate primary gamma rays (signal: `g`) from background hadronic cosmic ray noise (`h`) using 10 continuous morphometric Hillas shower parameters (`fLength`, `fWidth`, `fSize`, `fConc`, `fAsym`, etc.).
 - **Data File:** `magic04.data`
-- **Algorithms:** Gaussian Naive Bayes (GNB) with prior probability estimation, posterior decision thresholding, and continuous Gaussian likelihood modeling.
+- **Methodology:** Continuous Gaussian likelihood density estimation, log-posterior decision rule, and ROC analysis.
 
-### 2. HTRU2 Pulsar Candidate Dataset
-- **Dataset:** High Time Resolution Universe Survey 2 (HTRU2) ([UCI ID: 372](https://archive.ics.uci.edu/dataset/372))
-- **Objective:** Identify true pulsar radio emissions from radio frequency interference (RFI) and noise across integrated pulse profiles and dispersion measure (DM-SNR) curves.
-- **Algorithms:** Gaussian Naive Bayes under extreme class imbalance.
+### 2. High Time Resolution Universe Survey 2 (HTRU2) Pulsar Detection
+- **Dataset:** HTRU2 Dataset ([UCI ID: 372](https://archive.ics.uci.edu/dataset/372))
+- **Objective:** Identify candidate radio pulsars from radio frequency interference (RFI) using integrated pulse profile and dispersion measure statistics.
+- **Methodology:** Probabilistic decision boundary evaluation under severe class imbalance (~9% pulsar prevalence).
 
 ---
 
 ## Evaluation Metrics
-- **Confusion Matrix:** True/False Positives and Negatives.
-- **Classification Accuracy:** Overall accuracy across validation folds.
-- **Precision, Recall & F1-Score:** Macro and Weighted averages.
-- **ROC-AUC Score & ROC Curve:** Diagnostic ability across confidence thresholds.
-- **Log-Loss / Cross-Entropy:** Probabilistic calibration performance.
+- **Classification Accuracy:** Overall correct predictions.
+- **Precision, Recall, and F1-Score:** Macro and weighted performance across imbalanced labels.
+- **Receiver Operating Characteristic (ROC-AUC):** Discriminative threshold sensitivity.
+- **Log-Loss / Cross-Entropy:** Calibration quality of predicted posterior probabilities.
 
 ---
 
-## Repository Structure
+## Project Structure
 ```text
-ML-Lab-03-Naive-Bayes/
-├── lab-3.ipynb
+Naive-Bayes-ML/
+├── Naive_Bayes_Classification.ipynb
 ├── magic04.data
 ├── .gitignore
 └── README.md
@@ -61,17 +53,22 @@ ML-Lab-03-Naive-Bayes/
 
 ---
 
-## How to Run
+## Quickstart & Setup
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/shrridharshan27/ML-Lab-03-Naive-Bayes.git
-   cd ML-Lab-03-Naive-Bayes
+   git clone https://github.com/shrridharshan27/Naive-Bayes-ML.git
+   cd Naive-Bayes-ML
    ```
-2. **Install dependencies:**
+2. **Install requirements:**
    ```bash
    pip install numpy pandas matplotlib seaborn scikit-learn ucimlrepo jupyter
    ```
-3. **Launch Jupyter Notebook:**
+3. **Run the notebook:**
    ```bash
-   jupyter notebook lab-3.ipynb
+   jupyter notebook Naive_Bayes_Classification.ipynb
    ```
+
+---
+
+## License
+Distributed under the [MIT License](https://opensource.org/licenses/MIT).
